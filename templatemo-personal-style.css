@@ -1208,7 +1208,7 @@ https://templatemo.com/tm-593-personal-shape
 
         }
 
-/* Hero side images - always visible, fully responsive */
+/* Hero side images - responsive for all devices */
 .hero-images {
     position: absolute;
     top: 50%;
@@ -1218,14 +1218,14 @@ https://templatemo.com/tm-593-personal-shape
     justify-content: space-between;
     align-items: center;
     transform: translateY(-50%);
-    padding: 0 5%;
+    padding: 0 6%;
     z-index: 1;
     pointer-events: none;
 }
 
 .hero-img {
-    width: 30vw;               /* Increased from 26vw */
-    max-width: 400px;          /* Increased from 360px */
+    width: 28vw;
+    max-width: 380px;
     height: auto;
     border-radius: 18px;
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
@@ -1236,33 +1236,31 @@ https://templatemo.com/tm-593-personal-shape
 .hero-img.left { transform: translateY(-4%); }
 .hero-img.right { transform: translateY(4%); }
 
-/* Tablet */
+/* Tablet adjustments */
 @media (max-width: 1024px) {
-    .hero-images {
-        padding: 0 4%;
-    }
     .hero-img {
-        width: 34vw;
-        max-width: 300px;
+        width: 32vw;
+        max-width: 280px;
     }
 }
 
-/* Mobile phones - images stay visible, centered */
+/* Mobile: center text, stack images vertically above text */
 @media (max-width: 768px) {
     .hero-images {
         position: relative;
         top: auto;
         transform: none;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        gap: 1.5rem;
+        align-items: center;
+        gap: 1.2rem;
         margin-bottom: 1.5rem;
         padding: 0;
     }
 
     .hero-img {
-        width: 42vw;
-        max-width: 170px;
+        width: 70vw;
+        max-width: 220px;
         transform: none;
     }
 }
