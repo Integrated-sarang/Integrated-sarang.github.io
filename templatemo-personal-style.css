@@ -1208,7 +1208,7 @@ https://templatemo.com/tm-593-personal-shape
 
         }
 
-/* Hero side images */
+/* Hero side images - responsive scaling */
 .hero-images {
     position: absolute;
     top: 50%;
@@ -1223,8 +1223,8 @@ https://templatemo.com/tm-593-personal-shape
 }
 
 .hero-img {
-    width: 290px;
-    max-width: 25%;
+    width: 30vw;             /* 30% of viewport width */
+    max-width: 380px;        /* limit on large screens */
     height: auto;
     border-radius: 18px;
     box-shadow: 0 18px 40px rgba(0,0,0,0.25);
@@ -1232,9 +1232,33 @@ https://templatemo.com/tm-593-personal-shape
     opacity: 0.95;
 }
 
-.hero-img.left { transform: translateY(-6%); }
+.hero-img.left  { transform: translateY(-6%); }
 .hero-img.right { transform: translateY(6%); }
 
+/* Medium screens */
+@media (max-width: 1024px) {
+    .hero-img {
+        width: 32vw;
+        max-width: 300px;
+    }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
-    .hero-images { display: none; }
+    .hero-img {
+        width: 40vw;
+        max-width: 220px;
+    }
+}
+
+/* Mobiles - hide or shrink */
+@media (max-width: 480px) {
+    .hero-images {
+        justify-content: center;
+        gap: 1rem;
+    }
+    .hero-img {
+        width: 35vw;
+        max-width: 160px;
+    }
 }
