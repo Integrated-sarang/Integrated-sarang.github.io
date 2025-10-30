@@ -1208,7 +1208,7 @@ https://templatemo.com/tm-593-personal-shape
 
         }
 
-/* Hero side images - balanced responsive version */
+/* Hero side images - always visible, fully responsive */
 .hero-images {
     position: absolute;
     top: 50%;
@@ -1218,39 +1218,51 @@ https://templatemo.com/tm-593-personal-shape
     justify-content: space-between;
     align-items: center;
     transform: translateY(-50%);
-    padding: 0 6%;
+    padding: 0 5%;
     z-index: 1;
     pointer-events: none;
 }
 
 .hero-img {
-    width: 26vw;
-    max-width: 360px;
+    width: 30vw;               /* Increased from 26vw */
+    max-width: 400px;          /* Increased from 360px */
     height: auto;
     border-radius: 18px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
     object-fit: cover;
     opacity: 0.95;
 }
 
-.hero-img.left {
-    transform: translateY(-4%);
-}
-.hero-img.right {
-    transform: translateY(4%);
-}
+.hero-img.left { transform: translateY(-4%); }
+.hero-img.right { transform: translateY(4%); }
 
-/* Tablet: slightly smaller images */
+/* Tablet */
 @media (max-width: 1024px) {
+    .hero-images {
+        padding: 0 4%;
+    }
     .hero-img {
-        width: 30vw;
-        max-width: 280px;
+        width: 34vw;
+        max-width: 300px;
     }
 }
 
-/* Mobile: hide side images for clean layout */
+/* Mobile phones - images stay visible, centered */
 @media (max-width: 768px) {
     .hero-images {
-        display: none;
+        position: relative;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 0;
+    }
+
+    .hero-img {
+        width: 42vw;
+        max-width: 170px;
+        transform: none;
     }
 }
